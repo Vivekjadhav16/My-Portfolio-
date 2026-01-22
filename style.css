@@ -523,49 +523,60 @@
             display: none;
         }
         
-        @media only screen and (max-width: 600px) {
-                                .work .layer {
-        height: 100%; /* Make the description always visible on mobile */
-        background: linear-gradient(rgba(0, 0, 0, 0.7), #ff004f);
+      @media only screen and (max-width: 600px) {
+    /* --- Hamburger Menu Fix --- */
+    nav .fa-solid {
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
     }
-            .work-list {
-        grid-template-columns: 1fr; 
-        gap: 20px; 
+
+    nav ul {
+        background: #ff004f;
+        position: fixed;
+        top: 0;
+        right: -200px; /* Hidden state */
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 10; /* Ensure it stays above content */
+        transition: right 0.5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+
+    nav ul .fa-xmark {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+
+    /* --- Project Cards Fix (Referencing your screenshots) --- */
+    .work-list {
+        grid-template-columns: 1fr; /* One card per row prevents squashing */
+        gap: 20px;
+    }
 
     .work {
-        width: 100%;
-        height: 320px;
-        margin-bottom: 20px;
-    }
-
-    .work img {
-        height: 100%; 
-        object-fit: cover;
+        height: 400px; /* Give the text room to breathe */
     }
 
     .layer {
-  
-    padding: 20px; 
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+        height: 100%; /* Keeps info visible on mobile since there is no hover */
+        padding: 20px;
+    }
 
-.layer h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    line-height: 1.2;
-}
+    .layer h3 {
+        font-size: 18px;
+    }
 
-.layer p {
-    font-size: 14px;
-    line-height: 1.4;
-    word-wrap: break-word; 
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3; 
-    -webkit-box-orient: vertical;
+    .layer p {
+        font-size: 13px;
+    }
 }
             .header-text {
                 margin-top: 100%;
@@ -626,5 +637,34 @@
             .copyright {
                 font-size: 14px;
             }
+        
+        .social-icons a:hover {
+            color: #ff004f;
+            transform: translateY(-5px);
         }
-
+        .btn.btn2 {
+            background: #ff004f;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+        .btn.btn2:hover {
+            background: #e60047;
+        }
+        .contact-right form {
+            width: 100%;
+        }
+        form input,
+        form textarea {
+            width: 100%;
+            border: 0;
+            outline: none;
+            background: #262626;
+            padding: 15px;
+            margin: 15px;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 6px;
+        }
+    
