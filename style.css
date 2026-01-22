@@ -1,4 +1,6 @@
- * {
+        /* General Reset */
+        
+        * {
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
@@ -458,7 +460,7 @@
             transform: translateY(-5px);
         }
         
-        .btn.btn2 {
+        .btn.bnt2 {
             display: inline-block;
             background: #ff004f;
             color: #fff;
@@ -523,61 +525,7 @@
             display: none;
         }
         
-      @media only screen and (max-width: 600px) {
-    /* --- Hamburger Menu Fix --- */
-    nav .fa-solid {
-        display: block;
-        font-size: 25px;
-        cursor: pointer;
-    }
-
-    nav ul {
-        background: #ff004f;
-        position: fixed;
-        top: 0;
-        right: -200px; /* Hidden state */
-        width: 200px;
-        height: 100vh;
-        padding-top: 50px;
-        z-index: 10; /* Ensure it stays above content */
-        transition: right 0.5s;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 25px;
-    }
-
-    nav ul .fa-xmark {
-        position: absolute;
-        top: 25px;
-        left: 25px;
-        cursor: pointer;
-    }
-
-    /* --- Project Cards Fix (Referencing your screenshots) --- */
-    .work-list {
-        grid-template-columns: 1fr; /* One card per row prevents squashing */
-        gap: 20px;
-    }
-
-    .work {
-        height: 400px; /* Give the text room to breathe */
-    }
-
-    .layer {
-        height: 100%; /* Keeps info visible on mobile since there is no hover */
-        padding: 20px;
-    }
-
-    .layer h3 {
-        font-size: 18px;
-    }
-
-    .layer p {
-        font-size: 13px;
-    }
-}
+        @media only screen and (max-width: 600px) {
             .header-text {
                 margin-top: 100%;
                 font-size: 16px;
@@ -637,34 +585,4 @@
             .copyright {
                 font-size: 14px;
             }
-        
-        .social-icons a:hover {
-            color: #ff004f;
-            transform: translateY(-5px);
         }
-        .btn.btn2 {
-            background: #ff004f;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            transition: background 0.3s ease;
-        }
-        .btn.btn2:hover {
-            background: #e60047;
-        }
-        .contact-right form {
-            width: 100%;
-        }
-        form input,
-        form textarea {
-            width: 100%;
-            border: 0;
-            outline: none;
-            background: #262626;
-            padding: 15px;
-            margin: 15px;
-            color: #fff;
-            font-size: 18px;
-            border-radius: 6px;
-        }
-    
