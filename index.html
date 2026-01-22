@@ -97,7 +97,6 @@
     <div class="container">
         <h1 class="sub-title">My Work</h1>
 
-        <!-- IMPORTANT WRAPPER -->
         <div class="work-list">
 
             <div class="work">
@@ -133,7 +132,7 @@
     </div>
 </div>
 
-
+<!----conctact---->
     <div id="contact">
         <div class="container">
             <div class="row">
@@ -168,13 +167,25 @@
 
     <!-- JavaScript -->
  <script>
+    
+    function opentab(event, tabname) {
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    for (let tablink of tablinks) {
+        tablink.classList.remove("active-link");
+    }
+    for (let tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+
+        
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwOUwRd9hmX1ehFkTzZXCAt9VS2cLD3o9FItD3ccUpvolnVdfAo5SzjiM4lchu-9tYF/exec';
         const form = document.forms['submit-to-google-sheet'];
         const msg = document.getElementById("msg");
 form.addEventListener('submit', e => {
     e.preventDefault();
-    
-    // Show a "Loading" popup
     Swal.fire({
         title: 'Sending...',
         didOpen: () => { Swal.showLoading() }
@@ -182,12 +193,12 @@ form.addEventListener('submit', e => {
 
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
     .then(response => {
-        // Show the "Success" popup
+        
         Swal.fire({
             icon: 'success',
             title: 'Sent!',
             text: 'Message sent successfully!',
-            background: '#262626', // Matches your theme
+            background: '#262626', /
             color: '#fff',
             confirmButtonColor: '#ff004f'
         });
@@ -207,3 +218,4 @@ form.addEventListener('submit', e => {
 </body>
 
 </html>
+
